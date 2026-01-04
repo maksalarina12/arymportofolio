@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arymportofolio
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      # Optional: Mount for development (uncomment if needed)
+      # - .:/usr/share/nginx/html:ro
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-shape"></div>
+
+    <header>
+        <div class="logo" id="theme-switcher">
+            <img class="theme-icon" src="bahan/logo theme light.png" alt="Theme Switcher"> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html" class="active">Project</a></li>
+                <li><a href="sertifikat.html">Sertifikat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page-main">
+        <div class="project-container">
+            <h1 class="project-page-title">My Projects</h1>
+            
+            <div class="project-list">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <div class="project-number">1</div>
+                    <div class="project-content">
+                        <h2 class="project-name">Project A</h2>
+                        <p class="project-description">
+                            Aplikasi web security yang dirancang untuk melindungi data sensitif dengan enkripsi tingkat lanjut. 
+                            Menggunakan teknologi modern untuk memastikan keamanan informasi pengguna.
+                        </p>
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/5de5e8/ffffff?text=Project+A" 
+                                 alt="Project A" 
+                                 class="project-image"
+                                 onclick="openImageModal(this.src, this.alt)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <div class="project-number">2</div>
+                    <div class="project-content">
+                        <h2 class="project-name">Project B</h2>
+                        <p class="project-description">
+                            Sistem monitoring jaringan real-time dengan dashboard interaktif. 
+                            Memungkinkan pengguna untuk memantau status keamanan jaringan secara langsung.
+                        </p>
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/859f11/ffffff?text=Project+B" 
+                                 alt="Project B" 
+                                 class="project-image"
+                                 onclick="openImageModal(this.src, this.alt)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item">
+                    <div class="project-number">3</div>
+                    <div class="project-content">
+                        <h2 class="project-name">Project C</h2>
+                        <p class="project-description">
+                            Platform pembelajaran cybersecurity dengan modul interaktif dan simulasi serangan. 
+                            Dibangun untuk membantu pemula memahami konsep keamanan siber.
+                        </p>
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/5de5e8/ffffff?text=Project+C" 
+                                 alt="Project C" 
+                                 class="project-image"
+                                 onclick="openImageModal(this.src, this.alt)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item">
+                    <div class="project-number">4</div>
+                    <div class="project-content">
+                        <h2 class="project-name">Project D</h2>
+                        <p class="project-description">
+                            Aplikasi mobile untuk audit keamanan dengan fitur scanning otomatis. 
+                            Memudahkan profesional IT untuk melakukan penilaian keamanan dengan cepat dan akurat.
+                        </p>
+                        <div class="project-image-wrapper">
+                            <img src="https://via.placeholder.com/600x400/859f11/ffffff?text=Project+D" 
+                                 alt="Project D" 
+                                 class="project-image"
+                                 onclick="openImageModal(this.src, this.alt)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Image Modal Functions
+        function openImageModal(src, alt) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const captionText = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = src;
+            captionText.textContent = alt;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking the X button
+        document.querySelector('.close-modal').addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeImageModal();
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
+</body>
+</html>
